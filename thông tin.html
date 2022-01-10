@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+  </head>
+
+  <body class="dark-theme">		
+    <div class="sidebar-container visible" id="sidebar-container">
+      
+			<div class="sidebar" id="sidebar">
+				<div class="hamburger" id="hamburger" onclick="sidebar();">
+					<div class="line" id="lineTop2"></div>
+					<div class="line" id="lineBottom2"></div>
+				</div>
+
+				<div class="section">
+					<!-- <p class="title">MAIN</p> -->
+
+					<div class="tab active">>
+         	 <p>Nhà</p>
+					</div>
+					
+					<div class="tab">
+						<p>AEHNNS</p>
+					</div>
+				</div>
+				<div class="section bottom">
+					<div class="tab">
+						<ion-icon name="settings-outline"></ion-icon>
+					</div>
+
+					<label class="switch">
+						<input type="checkbox" id="theme-toggle">
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+    </div>
+
+		<section class="main" id="main">
+			<div class="top">
+				<div class="hamburger" id="hamburger" onclick="sidebar()">
+					<div class="line" id="lineTop1"></div>
+					<div class="line" id="lineBottom1"></div>
+				</div>
+
+					<div class="notification">3</div>
+					<ion-icon name="person-circle-outline"></ion-icon>
+				</div>
+			</div>
+
+			<div class="content" id="content">
+				<h1 class="greeting">Hello, <span class="accent">Mọi Người</span>!</h1>
+
+				<p class="subtitle">Những người <span class="accent"></span>sáng lập ra</p>
+
+				<div class="row">
+					<div class="data large">
+						<div class="container">
+							<ion-icon name="flag-outline" class="reviews-icon"></ion-icon>
+
+							<div class="text">
+
+						<div class="reviews">
+							<div class="review">
+								<div class="image-text-container">
+									<img src="sans.jpg">
+
+									<div class="text-container">
+										<h4>Yakza minecraft</h4>
+
+										<div class="stars">
+
+										</div>
+									</div>
+								</div>
+
+								<p>ko bt nhắn sao =))</p>
+							</div>
+
+							<div class="review">
+								<div class="image-text-container">
+									<img src="f.jpg">
+
+									<div class="text-container">
+										<h4>Pỏn Loli</h4>
+
+										<div class="stars">
+
+										</div>
+									</div>
+								</div>
+
+								<p>cũng ko bt nhắn sao =))</p>
+							</div>
+
+							<div class="review">
+								<div class="image-text-container">
+                  <img src="anime.jpg"> 
+
+									<div class="text-container">
+										<h4>Hoàng Lee</h4>
+
+										<div class="stars">
+
+										</div>
+									</div>
+								</div>
+
+								<p>cũng ko bt ghi sao =))).</p>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <script src="script.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
+
+<style>
+
+
+</style>
+
+<script>
+
+var i = 0;
+
+if (screen.width <= 500) {
+	document.getElementById("sidebar-container").classList.toggle("visible");
+	document.getElementById("content").style.paddingLeft = "0";
+
+	i = 1
+}
+
+
+
+function sidebar() {
+	i++;
+
+	document.getElementById("lineTop2").style.transform = "rotate(45deg)";
+	document.getElementById("lineTop2").style.top = "5px";
+	document.getElementById("lineBottom2").style.transform = "rotate(-45deg)";
+	document.getElementById("lineBottom2").style.bottom = "5px";
+
+	document.getElementById("lineTop1").style.transform = "rotate(45deg)";
+	document.getElementById("lineTop1").style.top = "5px";
+	document.getElementById("lineBottom1").style.transform = "rotate(-45deg)";
+	document.getElementById("lineBottom1").style.bottom = "5px";
+
+
+	if (i % 2 == 0) {
+		setTimeout(() => { 
+		document.getElementById("content").style.paddingLeft = "230px";
+
+			document.getElementById("sidebar-container").classList.toggle("visible");		
+		}, 300);
+	} else {
+
+		document.getElementById("content").style.paddingLeft = "0";
+
+		document.getElementById("lineTop2").style.transform = "rotate(0)";
+		document.getElementById("lineTop2").style.top = "0";
+		document.getElementById("lineBottom2").style.transform = "rotate(0)";
+		document.getElementById("lineBottom2").style.bottom = "0";
+
+		document.getElementById("lineTop1").style.transform = "rotate(0)";
+		document.getElementById("lineTop1").style.top = "0";
+		document.getElementById("lineBottom1").style.transform = "rotate(0)";
+		document.getElementById("lineBottom1").style.bottom = "0";
+
+
+		setTimeout(() => { 
+			document.getElementById("sidebar-container").classList.toggle("visible");		
+		}, 100);
+	}
+}
+
+</script>
+
+
+
+
+
